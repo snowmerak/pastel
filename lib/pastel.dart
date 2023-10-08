@@ -15,3 +15,6 @@ export 'src/iterable/cons.dart';
 
 export 'src/collection/list.dart';
 export 'src/collection/map.dart';
+
+export 'src/logic/cond.dart';
+export 'src/logic/scope.dart';
