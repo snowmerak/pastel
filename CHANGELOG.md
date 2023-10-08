@@ -11,3 +11,6 @@
 - Add `PastelError`, `ExceptionError`, `StringError` class.
 - Change `Result<O, E>` to `Result<O>`.
   
+## 0.1.1
+
+- Add `example.dart` file.
