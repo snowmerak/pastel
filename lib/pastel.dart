@@ -4,5 +4,4 @@
 library;
 
 export 'src/monad/result.dart';
-
-// TODO: Export any libraries intended for clients of this package.
+export 'src/monad/option.dart';
