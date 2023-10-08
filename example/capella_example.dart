@@ -1,6 +1,10 @@
-import 'package:capella/capella.dart';
+import 'package:pastel/pastel.dart';
 
 void main() {
-  var awesome = Awesome();
-  print('awesome: ${awesome.isAwesome}');
+  // Result
+  Result<int, String> result = Ok(1);
+
+  print(result.isOk()); // true
+
+  print(result.map((p0) => Ok(p0 + 1))); // Ok(2)
 }
