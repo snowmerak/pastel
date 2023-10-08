@@ -1,5 +1,3 @@
-import 'package:pastel/src/monad/result.dart';
-
 class Scope<T> {
   final T _state;
 
@@ -7,5 +5,5 @@ class Scope<T> {
 
   T get state => _state;
 
-  Result<R> let<R>(Result<R> Function(T) f) => f(_state);
+  R let<R>(R Function(T) f) => f(_state);
 }
