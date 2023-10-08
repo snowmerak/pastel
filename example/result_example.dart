@@ -2,7 +2,7 @@ import 'package:pastel/pastel.dart';
 
 void main() {
   // Result
-  Result<int, String> result = Ok(1);
+  Result<int> result = Ok(1);
 
   print(result.isOk()); // true
 
