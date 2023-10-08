@@ -6,3 +6,9 @@ library;
 export 'src/monad/error.dart';
 export 'src/monad/result.dart';
 export 'src/monad/option.dart';
+export 'src/monad/catch.dart';
+
+export 'src/iterable/numbers.dart';
+export 'src/iterable/comprehensive.dart';
+export 'src/iterable/generator.dart';
+export 'src/iterable/cons.dart';
