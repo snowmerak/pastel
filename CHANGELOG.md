@@ -20,3 +20,12 @@
 - Add some iterable functions.
 - Add `ImmutableList<T>`, `ImmutableMap<T>` class.
 
+## 0.3.0
+
+- Add `Either<L, R>` class.
+- Add `cond<T, R>`, `match<T, R>`, `when<T, R>` functions.
+- Add `Scope<T>` class.
+
+## 0.3.1
+
+- Fix export path.
