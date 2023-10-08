@@ -3,6 +3,6 @@
 /// More dartdocs go here.
 library;
 
-export 'src/capella_base.dart';
+export 'src/monad/result.dart';
 
 // TODO: Export any libraries intended for clients of this package.
