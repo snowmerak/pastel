@@ -12,3 +12,6 @@ export 'src/iterable/numbers.dart';
 export 'src/iterable/comprehensive.dart';
 export 'src/iterable/generator.dart';
 export 'src/iterable/cons.dart';
+
+export 'src/collection/list.dart';
+export 'src/collection/map.dart';
