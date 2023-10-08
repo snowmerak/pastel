@@ -14,3 +14,9 @@
 ## 0.1.1
 
 - Add `example.dart` file.
+
+## 0.2.0
+
+- Add some iterable functions.
+- Add `ImmutableList<T>`, `ImmutableMap<T>` class.
+
