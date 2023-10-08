@@ -1,4 +1,4 @@
-sealed class PastelError {}
+abstract class PastelError {}
 
 class ExceptionError extends PastelError {
   final Exception exception;
