@@ -1,4 +1,4 @@
-import 'package:pastel/pastel.dart';
+import 'package:pastel/src/monad/option.dart';
 
 class Cons<T> {
   final T value;
