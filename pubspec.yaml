@@ -1,4 +1,4 @@
-name: capella
+name: pastel
 description: A starting point for Dart libraries or applications.
 version: 1.0.0
 # repository: https://github.com/my_org/my_repo
@@ -8,6 +8,9 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  dio: ^5.3.3
+  protobuf: ^3.1.0
+  grpc: ^3.2.4
   # path: ^1.8.0
 
 dev_dependencies:
