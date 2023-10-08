@@ -1,6 +1,5 @@
 import 'package:pastel/pastel.dart';
 
 void main() {
-  final a = ImmutableList.from([1, 2, 3, 4, 5]);
-  final iter = a.toIterable();
+  print(Scope((a: 100, b: 200)).let((p) => Ok(p.a + p.b)).unwrap());
 }
