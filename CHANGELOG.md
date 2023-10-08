@@ -29,3 +29,7 @@
 ## 0.3.1
 
 - Fix export path.
+
+## 0.4.0
+
+- Change `Scope<T>.let<R>`'s return type to `R` form `Result<R>`.
