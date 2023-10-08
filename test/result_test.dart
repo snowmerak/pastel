@@ -4,7 +4,7 @@ import 'package:test/test.dart';
 void main() {
   group('Monad Test', () {
     test('Result int ok', () {
-      Result<int, String> result = Ok(1);
+      Result<int> result = Ok(1);
 
       expect(result.isOk(), true);
       expect(result.isErr(), false);
@@ -14,7 +14,7 @@ void main() {
     });
 
     test('Result int error', () {
-      Result<int, String> result = Err('error');
+      Result<int> result = Err(StringError('error'));
 
       expect(result.isOk(), false);
       expect(result.isErr(), true);
@@ -24,14 +24,14 @@ void main() {
     });
 
     test('Result int map', () {
-      Result<int, String> ok = Ok(1);
+      Result<int> ok = Ok(1);
 
-      expect(ok.map((p0) => Ok<int, String>(p0 + 1)).unwrap(), 2);
+      expect(ok.map((p0) => Ok<int>(p0 + 1)).unwrap(), 2);
 
-      Result<int, String> err = Err('error');
+      Result<int> err = Err(StringError('error'));
 
-      expect(err.map((p0) => Ok<int, String>(p0 + 1)).unwrapErr(), 'error');
-      expect(err.map((p0) => Ok<int, String>(p0 + 1)).unwrapOr(-1), -1);
+      expect(err.map((p0) => Ok<int>(p0 + 1)).unwrapErr(), 'error');
+      expect(err.map((p0) => Ok<int>(p0 + 1)).unwrapOr(-1), -1);
     });
   });
 }
