@@ -19,3 +19,5 @@ export 'src/collection/map.dart';
 
 export 'src/logic/cond.dart';
 export 'src/logic/scope.dart';
+
+export 'src/reactive/reactive.dart';
