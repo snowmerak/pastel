@@ -44,3 +44,7 @@
 
 - Update `README.md`.
 
+## 0.6.0
+
+- Add `Reactive<T>` class.
+
