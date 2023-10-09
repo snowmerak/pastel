@@ -57,11 +57,19 @@ sealed class Result<O> {
     }
   }
 
-  Result<O2> map<O2>(Result<O2> Function(O) f) {
+  Result<O2> map<O2>(O2 Function(O) f) {
     if (this is Ok<O>) {
-      return f((this as Ok<O>).value);
+      return Ok(f((this as Ok<O>).value));
     } else {
       return Err<O2>((this as Err<O>).error);
+    }
+  }
+
+  Result<O2> mapOr<O2>(O2 Function(O) f, O2 or) {
+    if (this is Ok<O>) {
+      return Ok(f((this as Ok<O>).value));
+    } else {
+      return Ok(or);
     }
   }
 }
