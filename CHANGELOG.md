@@ -40,3 +40,7 @@
 - Add `mapErr`, `mapErrOr` functions for `Result<T>` class.
 - Update `README.md`.
 
+## 0.5.1
+
+- Update `README.md`.
+
