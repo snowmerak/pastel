@@ -55,12 +55,12 @@ sealed class Either<A, B> {
     }
   }
 
-  Either<A2, B2> map<A2, B2>(Either<A2, B2> Function(A) whenLeft,
-      Either<A2, B2> Function(B) whenRight) {
+  Either<A2, B2> map<A2, B2>(
+      A2 Function(A) whenLeft, B2 Function(B) whenRight) {
     if (this is Left<A, B>) {
-      return whenLeft((this as Left<A, B>).value);
+      return Left(whenLeft((this as Left<A, B>).value));
     } else {
-      return whenRight((this as Right<A, B>).value);
+      return Right(whenRight((this as Right<A, B>).value));
     }
   }
 }
