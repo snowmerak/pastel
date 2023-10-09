@@ -72,6 +72,22 @@ sealed class Result<O> {
       return or;
     }
   }
+
+  Result<O> mapErr(Result<O> Function(PastelError) f) {
+    if (this is Err<O>) {
+      return f((this as Err<O>).error);
+    } else {
+      return this;
+    }
+  }
+
+  Result<O> mapErrOr(Result<O> Function(PastelError) f, Result<O> or) {
+    if (this is Err<O>) {
+      return f((this as Err<O>).error);
+    } else {
+      return or;
+    }
+  }
 }
 
 class Ok<O> extends Result<O> {
