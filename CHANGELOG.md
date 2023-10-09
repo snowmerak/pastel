@@ -48,3 +48,11 @@
 
 - Add `Reactive<T>` class.
 
+## 0.6.1
+
+- Export `Reactive<T>` class.
+
+## 0.6.2
+
+- Add `unlisten` method to `Reactive<T>` class.
+
