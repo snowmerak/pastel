@@ -33,3 +33,10 @@
 ## 0.4.0
 
 - Change `Scope<T>.let<R>`'s return type to `R` form `Result<R>`.
+
+## 0.5.0
+
+- Add `mapLeftOr`, `mapRightOr` functions for `Either<L, R>` class.
+- Add `mapErr`, `mapErrOr` functions for `Result<T>` class.
+- Update `README.md`.
+
