@@ -63,6 +63,22 @@ sealed class Either<A, B> {
       return Right(whenRight((this as Right<A, B>).value));
     }
   }
+
+  Either<A2, B> mapLeftOr<A2, B2>(A2 Function(A) whenLeft, A or) {
+    if (this is Left<A, B>) {
+      return Left(whenLeft((this as Left<A, B>).value));
+    } else {
+      return Left(whenLeft(or));
+    }
+  }
+
+  Either<A, B2> mapRightOr<A2, B2>(B2 Function(B) whenRight, B or) {
+    if (this is Right<A, B>) {
+      return Right(whenRight((this as Right<A, B>).value));
+    } else {
+      return Right(whenRight(or));
+    }
+  }
 }
 
 class Left<A, B> extends Either<A, B> {
