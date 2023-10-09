@@ -15,4 +15,8 @@ class Reactive<T> {
   void listen(Object parent, void Function(T) listener) {
     _listeners[parent.hashCode] = listener;
   }
+
+  void unlisten(Object parent) {
+    _listeners.remove(parent.hashCode);
+  }
 }
