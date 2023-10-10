@@ -9,7 +9,7 @@ class Reactive<T> {
 
   set write(T value) {
     _value = value;
-    _listeners.forEach((key, listener) => listener(value));
+    notify();
   }
 
   void listen(Object parent, void Function(T) listener) {
@@ -18,5 +18,9 @@ class Reactive<T> {
 
   void unlisten(Object parent) {
     _listeners.remove(parent.hashCode);
+  }
+
+  void notify() {
+    _listeners.forEach((key, listener) => listener(_value));
   }
 }
