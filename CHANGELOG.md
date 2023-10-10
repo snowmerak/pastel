@@ -56,3 +56,7 @@
 
 - Add `unlisten` method to `Reactive<T>` class.
 
+## 0.6.3
+
+- Add `notify()` method to `Reactive<T>` class.
+
