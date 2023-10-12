@@ -1,6 +1,24 @@
 import 'package:pastel/src/monad/error.dart';
 
 sealed class Result<O> {
+  Result();
+
+  Result.tryCatch(O Function() f) {
+    try {
+      Ok(f());
+    } on PastelError catch (e) {
+      Err<O>(e);
+    }
+  }
+
+  Result.ok(O value) {
+    Ok(value);
+  }
+
+  Result.err(PastelError error) {
+    Err<O>(error);
+  }
+
   bool isOk() {
     return this is Ok<O>;
   }
