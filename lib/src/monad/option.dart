@@ -31,25 +31,25 @@ sealed class Option<T> {
     }
   }
 
-  Option<T2> map<T2>(T2 Function(T) f) {
+  Option<T2> map<T2>(Option<T2> Function(T) f) {
     if (this is Some<T>) {
-      return Some(f((this as Some<T>).value));
+      return f((this as Some<T>).value);
     } else {
       return None();
     }
   }
 
-  Option<T2> mapOr<T2>(T2 Function(T) f, T2 or) {
+  Option<T2> mapOr<T2>(Option<T2> Function(T) f, T2 or) {
     if (this is Some<T>) {
-      return Some(f((this as Some<T>).value));
+      return f((this as Some<T>).value);
     } else {
       return Some(or);
     }
   }
 
-  Option<T2> mapOrElse<T2>(T2 Function(T) f, T2 Function() orElse) {
+  Option<T2> mapOrElse<T2>(Option<T2> Function(T) f, T2 Function() orElse) {
     if (this is Some<T>) {
-      return Some(f((this as Some<T>).value));
+      return f((this as Some<T>).value);
     } else {
       return Some(orElse());
     }
