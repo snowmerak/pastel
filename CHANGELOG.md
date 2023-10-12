@@ -60,3 +60,14 @@
 
 - Add `notify()` method to `Reactive<T>` class.
 
+## 0.6.4
+
+- Add `set update` property to `Reactive<T>` class.
+- Add `OnceReactive<T>` class.
+
+## 0.7.0
+
+- Change return type of `Either<L, R>`'s `map`, `mapLeftOr` and `mapRightOr` functions to `Either<L, R>`.
+- Change return type of `Option<T>`'s `map`, `mapOr`, `mapOrElse` function to `Option<R>`.
+- Add `Result.tryCatch<T>` constructor.
+
