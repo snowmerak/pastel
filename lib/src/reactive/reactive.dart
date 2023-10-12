@@ -12,6 +12,11 @@ class Reactive<T> {
     notify();
   }
 
+  set update(T Function(T) f) {
+    _value = f(_value);
+    notify();
+  }
+
   void listen(Object parent, void Function(T) listener) {
     _listeners[parent.hashCode] = listener;
   }
@@ -22,5 +27,15 @@ class Reactive<T> {
 
   void notify() {
     _listeners.forEach((key, listener) => listener(_value));
+  }
+}
+
+class OnceReactive<T> extends Reactive<T> {
+  OnceReactive(T value) : super(value);
+
+  @override
+  void notify() {
+    _listeners.forEach((key, listener) => listener(_value));
+    _listeners.clear();
   }
 }
