@@ -55,28 +55,29 @@ sealed class Either<A, B> {
     }
   }
 
-  Either<A2, B2> map<A2, B2>(
-      A2 Function(A) whenLeft, B2 Function(B) whenRight) {
+  Either<A2, B2> map<A2, B2>(Either<A2, B2> Function(A) whenLeft,
+      Either<A2, B2> Function(B) whenRight) {
     if (this is Left<A, B>) {
-      return Left(whenLeft((this as Left<A, B>).value));
+      return whenLeft((this as Left<A, B>).value);
     } else {
-      return Right(whenRight((this as Right<A, B>).value));
+      return whenRight((this as Right<A, B>).value);
     }
   }
 
-  Either<A2, B> mapLeftOr<A2, B2>(A2 Function(A) whenLeft, A or) {
+  Either<A2, B2> mapLeftOr<A2, B2>(Either<A2, B2> Function(A) whenLeft, A or) {
     if (this is Left<A, B>) {
-      return Left(whenLeft((this as Left<A, B>).value));
+      return whenLeft((this as Left<A, B>).value);
     } else {
-      return Left(whenLeft(or));
+      return whenLeft(or);
     }
   }
 
-  Either<A, B2> mapRightOr<A2, B2>(B2 Function(B) whenRight, B or) {
+  Either<A2, B2> mapRightOr<A2, B2>(
+      Either<A2, B2> Function(B) whenRight, B or) {
     if (this is Right<A, B>) {
-      return Right(whenRight((this as Right<A, B>).value));
+      return whenRight((this as Right<A, B>).value);
     } else {
-      return Right(whenRight(or));
+      return whenRight(or);
     }
   }
 }
