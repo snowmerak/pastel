@@ -1,5 +1,4 @@
 import 'package:pastel/pastel.dart';
-import 'package:pastel/src/monad/catch.dart';
 
 void main() {
   PastelError err = StringError('a string error');
